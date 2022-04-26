@@ -1,12 +1,13 @@
 from sklearn.metrics import normalized_mutual_info_score
 from sklearn.metrics import adjusted_rand_score
+from sklearn.metrics import adjusted_mutual_info_score
 import numpy as np
 import warnings
 from scipy.optimize import linear_sum_assignment as linear_assignment
 
 ari = adjusted_rand_score
 nmi = normalized_mutual_info_score
-
+ami = adjusted_mutual_info_score
 
 def acc(y_true, y_pred, detailed=False):
     def warn(*args, **kwargs):
