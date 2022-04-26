@@ -1,5 +1,5 @@
 from tensorboardX import SummaryWriter
-from metrics import ari, nmi, acc
+from metrics import ari, nmi, acc, ami
 
 '''
 Implementation of classes of AverageMeterSet and StatTracker are based on below repository
@@ -74,4 +74,5 @@ def update_train_accuracies(epoch_stats, targets, predictions, name='train'):
     epoch_stats.update(name + ' ACC', acc(targets[val_idxs], predictions[val_idxs]), n=1)
     epoch_stats.update(name + ' NMI', nmi(targets[val_idxs], predictions[val_idxs]), n=1)
     epoch_stats.update(name + ' ARI', ari(targets[val_idxs], predictions[val_idxs]), n=1)
+    epoch_stats.update(name + ' AMI', ami(targets[val_idxs], predictions[val_idxs]), n=1)
 
